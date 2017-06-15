@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+	  <modelVersion>4.0.0</modelVersion>
+	  <groupId>com.wikipedia.parser</groupId>
+	  <artifactId>wiki-parser</artifactId>
+	  <version>0</version>
+  
+    <name>wikipedia parser</name>
+	<description>A module library to extract Wikipedia 's Articles from an XML file.</description>
+	  
+	<developers>
+	    <developer>
+		      <name>Farouk BEN GHARSSALLAH</name>
+		      <email>farouk.bengarssallah@gmail.com</email>
+	    </developer>
+	</developers>
+
+   <dependencies>
+               <!--  Spark dependencies  -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.11</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-xml_2.11</artifactId>
+			<version>0.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-csv_2.11</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		
+		        <!--  MySQL Driver dependency  -->
+		<dependency>
+			    <groupId>mysql</groupId>
+			    <artifactId>mysql-connector-java</artifactId>
+			    <version>5.1.17</version>
+          </dependency>
+          
+                <!--  wikitext parsing API dependency  -->
+          <dependency>
+			    <groupId>net.java</groupId>
+			    <artifactId>textile-j</artifactId>
+			    <version>2.2</version>
+		  </dependency>
+  </dependencies>
+  
+ <build>
+     <plugins>
+                    <!-- JDK8 is for Lambda expressions used by 'textile-j' API  --> 
+			<plugin> 
+			          <groupId>org.apache.maven.plugins</groupId>  
+                      <artifactId>maven-compiler-plugin</artifactId>
+                      <configuration>
+                      <source>1.8</source>
+                      <target>1.8</target>
+                </configuration>
+            </plugin>
+     </plugins>
+  </build>
+  
+</project>
