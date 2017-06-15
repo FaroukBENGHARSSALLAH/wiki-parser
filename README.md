@@ -1,6 +1,6 @@
 # wiki-parser
 
-Comparaison between Java XML Parsing API, used in bigdata files
+Comparaison between Java XML Parsing APIs, used in bigdata files
 
 - [x] 'javax.xml' API
 - [x] 'spark-xml' API
