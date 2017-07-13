@@ -88,18 +88,20 @@ public class WikipediaParser {
       		                               ), Article.class
 	        		                  );
 	 
+		   // console log data
+                cleanedDataFrame.show();
 	        
-	           // generate a single CSV file
-	        cleanedDataFrame.coalesce(1)
-	                         .write()
-	                         .format("com.databricks.spark.csv")
-	                         .option("header", "true")
-	                         .save("E:/Downloads/24 season 1/newcarsm.csv");
+	           // generate a single CSV file if you want, a possible option
+	     //   cleanedDataFrame.coalesce(1)
+	                     //    .write()
+	                     //    .format("com.databricks.spark.csv")
+	                     //    .option("header", "true")
+	                     //    .save("E:/Downloads/24 season 1/newcarsm.csv");
 	         
-	         String databseURL = "jdbc:mysql:''//:3306/''?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false&user=''&password=''";
-	        	   
-	           // inserting articles in the database  
-	         cleanedDataFrame.insertIntoJDBC(databseURL, "article", false);
+		
+		     // inserting articles in the database if you want, a second possible option
+	       //  String databseURL = "jdbc:mysql:''//:3306/''?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false&user=''&password=''";
+	       //  cleanedDataFrame.insertIntoJDBC(databseURL, "article", false);
 	    }
 	 
 	
