@@ -96,7 +96,7 @@ public class WikipediaParser {
 	                     //    .write()
 	                     //    .format("com.databricks.spark.csv")
 	                     //    .option("header", "true")
-	                     //    .save("E:/Downloads/24 season 1/newcarsm.csv");
+	                     //    .save("file.csv");
 	         
 		
 		     // inserting articles in the database if you want, a second possible option
